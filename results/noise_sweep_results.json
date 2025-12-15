@@ -1,0 +1,18 @@
+{
+    "sigma_0.0": {
+        "baseline_acc": 0.9757,
+        "qinn_acc": 0.9709
+    },
+    "sigma_0.1": {
+        "baseline_acc": 0.9704,
+        "qinn_acc": 0.9626
+    },
+    "sigma_0.2": {
+        "baseline_acc": 0.9542,
+        "qinn_acc": 0.9231
+    },
+    "sigma_0.3": {
+        "baseline_acc": 0.9091,
+        "qinn_acc": 0.8473
+    }
+}
