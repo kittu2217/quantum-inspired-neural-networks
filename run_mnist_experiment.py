@@ -1,11 +1,33 @@
+# ============================================================
+# End-to-End MNIST Experiment with Reproducibility
+# Author: Ghanta Krishna Murthy
+# ============================================================
 
 import torch
 import torch.nn as nn
+import numpy as np
+import random
+
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
 from qinn.models.qil import QuantumInspiredLayer
 from qinn.utils.train_utils import train_one_epoch, evaluate
+
+# -------------------------------
+# Reproducibility (CRITICAL)
+# -------------------------------
+SEED = 42
+
+torch.manual_seed(SEED)
+np.random.seed(SEED)
+random.seed(SEED)
+
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
+
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
 
 # -------------------------------
 # Baseline Model
@@ -45,6 +67,7 @@ class QINN(nn.Module):
 def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
+    print(f"Random seed: {SEED}")
 
     transform = transforms.ToTensor()
 
@@ -62,17 +85,8 @@ def main():
         transform=transform
     )
 
-    train_loader = DataLoader(
-        train_dataset,
-        batch_size=128,
-        shuffle=True
-    )
-
-    test_loader = DataLoader(
-        test_dataset,
-        batch_size=256,
-        shuffle=False
-    )
+    train_loader = DataLoader(train_dataset, batch_size=128, shuffle=True)
+    test_loader = DataLoader(test_dataset, batch_size=256, shuffle=False)
 
     baseline = BaselineMLP().to(device)
     qinn = QINN().to(device)
