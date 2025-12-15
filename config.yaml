@@ -1,0 +1,13 @@
+experiment:
+  name: mnist_baseline_vs_qinn
+  seed: 42
+
+training:
+  epochs: 3
+  batch_size: 128
+  learning_rate: 0.001
+
+model:
+  input_dim: 784
+  hidden_dim: 256
+  output_dim: 10
