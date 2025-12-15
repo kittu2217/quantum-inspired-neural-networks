@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+env/
+
+# Data and results
+data/
+results/*.pkl
+results/*.npy
+
+# Notebook internals
+.virtual_documents/
+
+# OS files
+.DS_Store
