@@ -1,0 +1,46 @@
+{
+    "baseline": {
+        "epoch_1": {
+            "train_acc": 0.9032,
+            "test_acc": 0.9444
+        },
+        "epoch_2": {
+            "train_acc": 0.9547,
+            "test_acc": 0.9632
+        },
+        "epoch_3": {
+            "train_acc": 0.9688,
+            "test_acc": 0.969
+        },
+        "epoch_4": {
+            "train_acc": 0.9763,
+            "test_acc": 0.9745
+        },
+        "epoch_5": {
+            "train_acc": 0.9817,
+            "test_acc": 0.9757
+        }
+    },
+    "qinn": {
+        "epoch_1": {
+            "train_acc": 0.9386,
+            "test_acc": 0.9683
+        },
+        "epoch_2": {
+            "train_acc": 0.9747,
+            "test_acc": 0.9685
+        },
+        "epoch_3": {
+            "train_acc": 0.982,
+            "test_acc": 0.9715
+        },
+        "epoch_4": {
+            "train_acc": 0.985,
+            "test_acc": 0.9738
+        },
+        "epoch_5": {
+            "train_acc": 0.9851,
+            "test_acc": 0.9709
+        }
+    }
+}
